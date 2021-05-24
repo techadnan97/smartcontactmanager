@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section class="banner">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-10 offset-md-2">
+				<div class="my-register text-dark">
+					<div th:if="${session.message}" class="alert"
+						th:classappend="${session.message.type}" role="alert">
+						<p th:text=${session.message.message}></p>
+						<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+					</div>
+					<h1 class="text-center text-dark">Register Here!!</h1>
+
+					<form th:action="@{/do_register}" method="post" th:object="${user}">
+
+						<div class="form-group">
+							<label for="name_field">Your Name</label> <input type="text" 
+							th:classappend="${#fields.hasErrors('name') ? 'is-invalid':' '}" class="form-control" name="name" id="name_field"
+								th:value="${user.name}" placeholder="Enter Name">
+								<div class="invalid-feedback" th:each="e:${#fields.errors('name')}" th:text="${e}"> </div>
+						</div>
+
+						<div class="form-group ">
+							<label for="email_field">Your Email</label> <input type="email"
+							th:classappend="${#fields.hasErrors('email') ? 'is-invalid' :' '}"	class="form-control" name="email" id="email_field"
+								th:value="${user.email}" placeholder="Enter Email">
+								<div class="invalid-feedback" th:each="e:${#fields.errors('email')}" th:text="${e}"> </div>
+						</div>
+						<div class="form-group mt-1">
+							<label for="pass_field">Your Password</label> <input
+								type="password" th:classappend="${#fields.hasErrors('password') ? 'is-invalid' :' '}" class="form-control" name="password"
+								id="pass_field" placeholder="Enter Password">
+								<div class="invalid-feedback" th:each="e:${#fields.errors('password')}" th:text="${e}"> </div>
+						</div>
+						<div class="form-group  mt-1">
+							<textarea rows="2" class="form-control" name="about"
+								th:value="${user.about}" placeholder="Enter Something Yourself"></textarea>
+						</div>
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input" name="agreement" />
+							<label for=agreement>Accept terms and conditions</label>
+						</div>
+						<div class="form-group  mt-1 text-center">
+							<button type="submit" class="btn bg-primary mt-1">Submit</button>
+							<button type="reset" class="btn bg-primary mt-1">Reset</button>
+						</div>
+					</form>
+				</div>
+</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

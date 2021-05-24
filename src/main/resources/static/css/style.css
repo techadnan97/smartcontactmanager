@@ -1,0 +1,135 @@
+@charset "ISO-8859-1";
+body {
+	background: #e2e2e2!important;
+}
+.bg-primary{
+	background: #009688 !important;
+}
+.banner{
+	width: 100%;
+	height: 90vh;
+	background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)) ,url(../image/banner.jpg);
+	background-size:cover;
+	color: dark;
+}
+.my-register{
+	width: 50%;
+	float:right;
+	margin:5px;
+	padding:20px;
+	background: #FFFFFF;
+	border-radius: 20px;
+	
+}
+/* .container {
+    padding: 110px;
+} */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   /*  color: #ffffff!important; */
+    opacity: 1; /* Firefox */
+    font-size:18px!important;
+}
+.form-login {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    
+    box-shadow:0 1px 0 #cfcfcf;
+}
+.form-control{
+    background:transparent!important;
+    color:dark!important;
+    font-size: 18px!important;
+}
+h1{
+    color:white!important;
+}
+h4 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+.text-white{
+    color: white!important;
+}
+.wrapper {
+    text-align: center;
+}
+
+@media only screen and (max-width:600px){
+.sidebar{
+	display:none;
+	width: 80%!important;
+	height: 100%;
+	position: fixed;
+	background: white;
+	padding-top: 20px;
+	
+}
+.contant{
+	margin-left: 0px!important
+}	
+}
+.sidebar{
+	width: 18%;
+	height: 100%;
+	position: fixed;
+	background: white;
+	padding-top: 45px;
+	z-index: 999999999999999999999999999999;
+	
+}
+.sidebar a{
+	display:block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+	
+}
+.sidebar .divider{
+	height: .5px;
+	width: 100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+.sidebar a:hover{
+	background: #e2e2e2;
+}
+.sidebar .crossbar{
+	position: absolute;
+	top: 0;
+	font-size: 36px;
+	right: 35px;
+	cursor: pointer;
+}
+.contant{
+	margin-left: 20%
+}
+.dasboard_profile_img{
+	width: 40px;
+	height: 40px;
+	object-fit:cover;
+	border-radius: 50%;
+}
+.seacrh-container{
+	position: relative;
+}
+.seacrh-result{
+	position: absolute;
+	background: white;
+	width: 100%;
+	padding: 10px;
+	border:  1px solid gray;
+	display: none;
+}
